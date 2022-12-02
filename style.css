@@ -37,7 +37,7 @@
 @media (min-width: 1048px) {
         .grid {
             grid-template-columns: 1fr 1fr 1fr;
-        }
+    }
 }
 /* DAY 1 */
 .day-1 {
@@ -120,5 +120,69 @@
 }
 
 /* DAY 2 */
+.day-2 {
+    background: #4EAF82;
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+}
+
+.hamburger {
+    position: relative;
+    width: 80px;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+}
+
+.top-bar, .middle-bar, .bottom-bar {
+    content:'';
+    width: 100%;
+    height: 8px;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.4);
+}
+
+.top-bar {
+    position: absolute;
+    top: 0;
+    transform: rotate(0deg);
+    transition: transform 0.3s ease, top 0.3s ease 0.3s;
+}
+
+.middle-bar {
+    transform: scaleX(1) scaleY(1);
+    transition: transform 0.3s ease-out 0.3s;
+}
+
+.bottom-bar {
+    position: absolute;
+    bottom: 0;
+    transform: rotate(0deg);
+    transition: transform 0.3s ease, bottom 0.3s ease 0.3s;
+}
+
+#bars:checked + .hamburger .middle-bar {
+    transform: scaleY(0) scaleX(0);
+    transition: 0.3s ease;
+}
+
+#bars:checked + .hamburger .top-bar {
+    top: 20px;
+    transform: rotate(45deg);
+    transition: transform 0.3s ease 0.3s, top 0.3s ease;
+}
+
+#bars:checked +.hamburger .bottom-bar {
+    bottom: 20px;
+    transform: rotate(135deg);
+    transition: transform 0.3s ease 0.3s, bottom 0.3s ease;
+}
 
 /* DAY 3 */
