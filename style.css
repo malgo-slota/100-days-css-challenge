@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300);
 
 /* general */
 *, *::before, *::after {
@@ -354,3 +354,303 @@ input[type="checkbox"] {
         box-shadow: 10px 10px 15px 0 rgba(0, 0, 0, 0.3);
     }
 }
+/* DAY 5 */
+.day-5 {
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    background: #47A7A1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 10px 10px 15px 0 rgba(0, 0, 0, 0.3);  
+}
+
+#card {
+    width: 280px;
+    height: 220px;
+    background: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+} 
+
+#card-header {
+    color: #fff;
+    width: 100%;
+    height: 30%;
+    background: #F1BA64;
+    display: flex;
+    font-size: 14px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+#card-header-left {
+    display: flex;
+    flex-direction: column;
+}
+
+#card-header-left>span:first-child {
+    font-weight: 600;
+}
+#card-header-left>span:last-child {
+    font-weight: 400;
+    font-size: 12px;
+}
+
+#card-header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+#card-header-right>span:first-child {
+    font-weight: 400;
+    font-size: 12px;
+}
+
+#card-header-right>span:last-child {
+    font-weight: 600;
+}
+
+.chart-legend {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    font-size: 10px;
+    margin: 15px 15px;
+}
+
+#chart-bg {
+    position: relative;
+    height: 80px;
+}
+
+.red-views {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.blue-purchases {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.red-views::before {
+    display: block;
+    content: '';
+    width: 15px;
+    height: 4px;
+    border-radius: 2px;
+    background: #EF7272;
+}
+
+.blue-purchases::before {
+    display: block;
+    content: '';
+    width: 15px;
+    height: 4px;
+    border-radius: 2px;
+    background: #7BA1F8;
+}
+
+.lines-bg {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    flex-direction: column;
+    height: 100%;
+}
+
+.line {
+    height: 1px;
+    width: 100%;
+    background: #F2F2F2;
+}
+
+.weekdays {
+    font-size: 11px;
+    margin: 0 10px;
+    display: flex;
+    justify-content: space-between;
+    color: #B8B8B8;
+}
+
+.red-data, .blue-data {
+    position: absolute;
+    left: 15px;
+    top: 30px;
+    height: 80px;
+    width: 250px;
+}
+
+.blue-line {
+    stroke: #7BA1F8;
+    fill: none;
+    stroke-width: 1;
+    stroke-linecap: round;
+}
+
+.red-line {
+    stroke: #EF7272;
+    fill: none;
+    stroke-width: 1;
+    stroke-linecap: round;
+}
+
+[class^="point-"] {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 3px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+[class^="point-"]:hover > .red-tip {
+    visibility: visible;
+    opacity: 1;
+}
+
+[class^="point-"]:hover > .blue-tip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.red-point {
+    background: #EF7272;
+}
+
+.red-tip {
+    background: #EF7272;
+    font-weight: 600;
+    font-size: 9px;
+    color: #fff;    
+    z-index: 10;
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translate3d(-50%, 10px, 0);
+    padding: 6px 6px;
+    border-radius: 3px;
+    visibility: hidden;
+    opacity: 0;
+    transition: transform 0.4s ease-out 0s, opacity 0.4s ease-out 0s;
+}
+
+.red-tip:after {
+    position: absolute;
+    left: 8px;
+    right: 0;
+    bottom: -4px;
+    content: '';
+    width: 0px;
+    height: 0px;    
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #EF7272;
+}
+
+.blue-tip {
+    background: #7BA1F8;
+    font-weight: 600;
+    font-size: 9px;
+    color: #fff;
+    z-index: 10;
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translate3d(-50%, 10px, 0);
+    padding: 6px 6px;
+    border-radius: 3px;
+    visibility: hidden;
+    opacity: 0;
+    transition: transform 0.4s ease-out 0s, opacity 0.4s ease-out 0s;
+}
+
+.blue-tip:after {
+    position: absolute;
+    left: 6px;
+    right: 0;
+    bottom: -4px;
+    content: '';
+    width: 0px;
+    height: 0px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #7BA1F8;
+}
+
+.blue-point {
+    background: #7BA1F8;
+}
+
+.point-1.red-point {
+    left: 7px;
+    top: 43px;
+}
+.point-1.blue-point {
+    left: 7px;
+    top: 58px;
+}
+
+.point-2.red-point {
+    left: 48px;
+    top: 9px;
+}
+.point-2.blue-point {
+    left: 48px;
+    top: 47px;
+}
+
+.point-3.red-point {
+    left: 88px;
+    top: 20px;
+}
+.point-3.blue-point {
+    left: 88px;
+    top: 62px;
+}
+
+.point-4.red-point {
+    left: 128px;
+    top: 8px;
+}
+.point-4.blue-point {
+    left: 128px;
+    top: 52px;
+}
+
+.point-5.red-point {
+    left: 169px;
+    top: 35px;
+}
+.point-5.blue-point {
+    left: 169px;
+    top: 58px;
+}
+
+.point-6.red-point {
+    left: 202px;
+    top: 45px;
+}
+.point-6.blue-point {
+    left: 202px;
+    top: 71px;
+}
+
+.point-7.red-point {
+    left: 242px;
+    top: 16px;
+}
+.point-7.blue-point {
+    left: 242px;
+    top: 61px;
+}
+
+/* DAY 6 */
+
+                
+            
+                   
