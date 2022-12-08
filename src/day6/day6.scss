@@ -1,0 +1,143 @@
+@import "../index.css";
+
+.day-6 {
+    background: linear-gradient(45deg, #EEBD6C 0%, #CB7D4E 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #786450;
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    position: relative;
+}
+
+.profile-wrapper {
+    background: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    width: 80%;
+    height: 70%;
+}
+
+.profile-main {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.stats-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.stats-wrapper>div {
+    background: #F5E8DF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100px;
+    padding: 25px 35px;
+    cursor: pointer;
+}
+
+.stats-wrapper>div:hover {
+    background: #E1CFC2;
+    transition: 0.6s;
+}
+
+.stats-wrapper>div>span:first-child {
+    font-weight: 700;
+}
+
+.stats-wrapper>div>span:last-child {
+    font-size: 11px;
+    font-weight: 300;
+}
+
+.picture-wrapper {
+    position: relative;
+    cursor: pointer;
+}
+
+.outer-circle {
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    border-bottom: 1px solid #786450;
+    border-top: 1px solid #786450;
+    border-left: 1px solid #786450;
+    border-right: 1px solid transparent;
+    border-radius: 50%;
+    width: 96px;
+    height: 96px;
+}
+
+.inner-circle {
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    border-bottom: 1px solid #786450;
+    border-top: 1px solid #786450;
+    border-right: 1px solid #786450;
+    border-left: 1px solid transparent;
+    border-radius: 50%;
+    width: 86px;
+    height: 86px;
+}
+
+.picture-wrapper:hover>.inner-circle {
+    transform: rotate(360deg);
+    transition: 1.5s ease-in-out;
+}
+
+.picture-wrapper:hover>.outer-circle {
+    transform: rotate(-360deg);
+    transition: 1.5s ease-in-out;
+}
+
+.profile-picture>img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 11px;
+    font-weight: 300;
+    margin-bottom: 8px;
+}
+
+.profile-info>span:first-child {
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.profile-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.profile-buttons>button {
+    color: #786450;
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    border: 1px solid #786450;
+    width: 110px;
+    height: 28px;
+    border-radius: 15px;
+    background: none;
+    font-weight: 700;
+}
+
+.profile-buttons>button:hover {
+    background: #786450;
+    color: #fff;
+    transition: 0.4s;
+}

@@ -1,0 +1,77 @@
+@import '../index.css';
+
+.day-3 {
+    /* grid-area: 1; */
+    background: #272C34;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#circle {
+    position: relative;
+    content: '';
+    height: 180px;
+    width: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+#sky {
+    position: absolute;
+    content: '';
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to bottom,
+            #7CDEFA 65%, #E1D170 35%);
+}
+
+#sun {
+    position: absolute;
+    content: '';
+    background: #FEF04F;
+    left: 74px;
+    top: 7px;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    transform-origin: 50% 400%;
+    animation: sun-path 5s cubic-bezier(0.4, 0, 0.49, 1) infinite;
+}
+
+#piramide {
+    content: '';
+    width: 0px;
+    height: 0px;
+    transform: translate(40%, 134%);
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 50px solid #F3F3F3;
+}
+
+#piramide-front {}
+
+#piramide-side {}
+
+#dessertline {}
+
+#shadow {
+    content: '';
+}
+
+@keyframes sun-path {
+    0% {
+        transform: rotate(-70deg);
+    }
+
+    30% {
+        transform: rotate(-20deg);
+    }
+
+    70% {}
+
+    100% {
+        transform: rotate(70deg);
+    }
+}
