@@ -18,7 +18,7 @@ export default function Day10() {
         <div className="frame day-10">
             <div className='clock-face'>
                 <div className='dotted-frame'>
-                    <svg class="spinner">
+                    <svg className="spinner">
                         <circle cx="50%" cy="50%" r="99"></circle>
                     </svg>
                     <div className="clock">

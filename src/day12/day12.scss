@@ -1,0 +1,89 @@
+@import "../index.css";
+
+.day12 {
+    position: relative;
+    background: #4CB6DE;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    padding: 1.3rem;
+    gap: 1rem;
+
+    .definition {
+            visibility: hidden;
+            opacity: 0;
+            position: absolute;
+            top: 15px;
+            left: 50px;
+            width: 300px;
+            height: 120px;
+            background: #296F8A;
+            transform: translate3d(0, -10px, 0);
+            transition: all .5s ease-out;
+            &::after {
+                position: absolute;
+                bottom: 0;
+                left: 150px;
+                content: '';
+                width: 0px;
+                height: 0px;
+                transform: translate(-50%, 100%);
+                border-left: 10px solid transparent;
+                border-right: 10px solid transparent;
+                border-top: 10px solid #296F8A;
+            }
+    
+            .pronunciation {
+                padding: 5px 10px;
+                color: #296F8A;
+                font-size: 1.1rem;
+                width: 100%;
+                height: 35px;
+                background: #fff;
+            }
+    
+            .content {
+                padding: 5px 10px;
+                font-size: 1rem;
+                span {
+                    font-weight: 600;
+                }
+            }
+        }
+
+    .quote {
+        z-index: 1;
+        &:before {
+            display: block;
+            position: absolute;
+            z-index: -1;
+            content: '„';
+            font-family: Arial;
+            font-size: 250px;
+            color: #6AC2E3;
+            line-height: 35px;
+            top: -20px;
+            left: 0;
+        }
+        span {
+            background: #296F8A;
+            padding: 0 0.6rem;
+            cursor: pointer;
+            &:hover .definition,
+            &:focus .definition {
+                    visibility: visible;
+                    opacity: 1;
+                    transform: translate3d(0, 0, 0);
+            }
+        }       
+    }
+    .author {
+        align-self: flex-start;
+        font-size: 1.3rem;
+        font-style: italic;
+        font-weight: 300;
+    }
+}
