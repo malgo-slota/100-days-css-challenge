@@ -1,24 +1,22 @@
-import React from 'react';
+import React, {useState} from 'react';
 import "./day7.scss";
 
 export default function Day7() {
-    
-    const backCard = document.querySelector(".backcard");
-    const frontCard = document.querySelector(".frontcard");
-    const searchBar = document.querySelector(".searchbar");
+
+    const [searchbarOpen, setSearchbarOpen] = useState(false);
+    const [menuOpen, setMenuOpen] = useState(false);
 
     const openMenu = () => {
-        frontCard.classList.toggle("show-menu");
-        backCard.classList.toggle("backcard-slide");
+        setMenuOpen(!menuOpen);
     }   
 
     const showSearchbar = () => {
-        searchBar.classList.toggle("searchbar-show");
+        setSearchbarOpen(!searchbarOpen);
     }
 
   return (
       <div className="frame day-7">
-            <div className="frontcard">
+            <div className={`frontcard ${menuOpen ? "show-menu" : "" }`}>
                 <div className="notifications-header">
                     <div type="checkbox" id="notification-menu">
                         <div className="open-menu-icon"
@@ -35,7 +33,8 @@ export default function Day7() {
                             onClick={showSearchbar}>
                         <span className="material-symbols-outlined">search</span>
                     </div>
-                    <input type="text" className="searchbar" placeholder="Search ..." />
+                    <input type="text" className={`searchbar ${searchbarOpen ? "searchbar-show" : "" }`} 
+                            placeholder="Search ..." />
                 </div>
                 <div className="notifications-wrapper">
                     <div className="vertical-line"></div>
@@ -72,7 +71,7 @@ export default function Day7() {
                     </div>
                 </div>
             </div>
-            <div className="backcard">
+            <div className={`backcard ${menuOpen ? "backcard-slide" : "" }`}>
                 <div>
                     <span className="material-symbols-outlined">dashboard</span>
                     <span>Dashboard</span>
