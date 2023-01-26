@@ -1,0 +1,156 @@
+@import "../index.css";
+
+.day-15 {
+    background: linear-gradient(45deg, #3A92AF 0%, #5CA05A 100%);
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 8px 10px 15px 0 rgba(0, 0, 0, 0.2);
+    .container {
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 3px;
+        overflow: hidden;
+        .header {
+            color: #676767;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0;
+            height: 50px;
+            width: 100%;
+            border-bottom: 1px solid #D8D8D8;
+            // &.uploading-file {
+            //     border-bottom: 1px solid #6ECE3B;
+            // }
+        }
+
+        form {
+            height: 210px;
+            width: 300px;
+            input {
+                display: none;
+            }   
+            label {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 30px;
+                gap: 30px;
+                .dashed-border {
+                    border: 1px dashed #A4A4A4;
+                    width: 100px;
+                    height: 80px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    &.drag-active {
+                            span {
+                                opacity: 0.4; 
+                            }
+                    }
+                    span {
+                        font-size: 60px;
+                        color: #BDBDBD;
+                    }
+                }
+                .arrows {
+                    opacity: 0;
+                    font-size: 60px;
+                    color: #BDBDBD;
+                    animation: spin 3.2s ease-in-out;
+                }
+                .upload-done {
+                    position: absolute;
+                    left: 124px;
+                    right: 0;
+                    opacity: 0;
+                    font-size: 60px;
+                    color: #BDBDBD;
+                    animation: done .5s ease-in 3.2s;
+                    animation-fill-mode: both;
+                }
+
+                .upload-btn {
+                    cursor: pointer;
+                    font-size: 14px;
+                    color: #fff;
+                    background: #6ECE3B;
+                    border: none;
+                    border-radius: 3px;
+                    box-shadow: 0 2px 0 0 #498C25;
+                    padding: 12px 40px;
+
+                    &:hover {
+                        box-shadow: 0 2px 0 0 #498C25, 0 2px 10px 0 #6ECE3B;
+                    }
+                }
+
+                .loading-bar {
+                    position: absolute;
+                    z-index: 1;
+                    width: 300px;
+                    height: 3px;
+                    top: -32px;
+                    left: 0;
+                    background: #6ECE3B;
+                    animation: loading 3s ease-out;
+                    transform-origin: 0 0;
+                }
+            }   
+            #drag-file-element {
+                    position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 1rem;
+                        top: 0px;
+                        right: 0px;
+                        bottom: 0px;
+                        left: 0px;
+            }
+        }
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes done {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes loading {
+    from {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(1) translate3d(0, 0, 0);
+    }
+}
